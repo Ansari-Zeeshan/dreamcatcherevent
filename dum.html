@@ -1,0 +1,78 @@
+<html>  
+<body>  
+  
+<h2 style="color:green">Create a checkbox and get its value</h2>  
+<h4> Select the programming language, you know </h4>  
+<tr>  
+<td> Java: <input type="checkbox" id="check1" class="pl" value="Java"> </td>  
+<td> PHP: <input type="checkbox" id="check2" class="pl" value="PHP"> </td>   
+</tr> <tr>  
+<td> Angular: <input type="checkbox" id="check3" class="pl" value="Angular"> </td>  
+<td> CSS: <input type="checkbox" id="check4" class="pl" value="CSS"> </td>  
+</tr> <tr>  
+<td> Python: <input type="checkbox" id="check5" class="pl" value="Python"> </td>  
+<td> Android: <input type="checkbox" id="check6" class="pl" value="Android"> </td>  
+<button onclick="checkAll()">Check all</button> <br><br>  
+<button onclick="getCheckboxValue()">Submit</button> <br>  
+<h4 style="color:green" id="result"></h4>    
+  
+<script>  
+function checkAll() {  
+        var inputs = document.querySelectorAll('.pl');   
+        for (var i = 0; i < inputs.length; i++) {   
+            inputs[i].checked = true;   
+        }   
+}  
+function getCheckboxValue() {  
+  
+  const l1 = document.getElementById("check1");  
+  const l2 = document.getElementById("check2");  
+  const l3 = document.getElementById("check3");  
+  const l4 = document.getElementById("check4");  
+  const l5 = document.getElementById("check5");  
+  const l6 = document.getElementById("check6");
+
+  let final = document.getElementById("result");
+  let res1,res2,res3,res4,res5,res6;
+  var res=" ";   
+  if (l1.checked == true && l2.checked== true){  
+    var pl1 = document.getElementById("check1").value;  
+    var pl2 = document.getElementById("check2").value;  
+    final.innerHTML =`You have selected ${pl1}, ${pl2} languages`;  
+  }   
+  else if (l2.checked == true){  
+    var pl2 = document.getElementById("check2").value;  
+    res2 = res1 + pl2 + ",";   
+    final.innerHTML = "You have selected " + res2 + " languages";
+  }  
+  else if (l3.checked == true){  
+  document.write(res);  
+    var pl3 = document.getElementById("check3").value;  
+    res3 = res2 + pl3 + ",";   
+    final.innerHTML = "You have selected " + res3 + " languages";
+  }  
+  else if (l4.checked == true){  
+    var pl4 = document.getElementById("check4").value;  
+    res4 = res3 + pl4 + ",";   
+    final.innerHTML = "You have selected " + res4 + " languages";   
+  }  
+  else if (l5.checked == true){  
+    var pl5 = document.getElementById("check5").value;  
+    res5 = res4 + pl5 + ",";   
+    final.innerHTML = "You have selected " + res5 + " languages";   
+  }  
+  else if (l6.checked == true){  
+    var pl6 = document.getElementById("check6").value;  
+    res6 = res5 + pl6 + ",";   
+    final.innerHTML = "You have selected " + res6 + " languages";   
+  } 
+  else 
+  {  
+  return document.getElementById("result").innerHTML = "You have not selected anything";  
+  }  
+ 
+}  
+</script>  
+  
+</body>  
+</html>  
